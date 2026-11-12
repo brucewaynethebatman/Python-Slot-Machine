@@ -154,63 +154,71 @@ def get_bet(lines):
 
 
 def main():
-    # Display the game title.
-    print("=" * 35)
-    print("       🎰 SLOT MACHINE 🎰")
-    print("=" * 35)
 
-    # Collect the player's initial balance and betting preferences.
-    balance = deposit()
-    lines = get_number_of_lines()
+    while True:
+        print("Starting...")
 
-    # Get the bet amount and calculate the total amount being wagered.
-    bet = get_bet(lines)
-    total_bet = bet * lines
+        # Display the game title.
+        print("=" * 35)
+        print("       🎰 SLOT MACHINE 🎰")
+        print("=" * 35)
 
-    # Prevent the player from betting more than their available balance.
-    if total_bet > balance:
-        print(
-            f"Error: Your current balance ${balance} is insufficient "
-            f"to place that bet on {lines} "
-            f"{'line' if lines == 1 else 'lines'} at ${bet} per line."
-        )
-        print("Please decrease your bet or increase your deposit.")
-        return
+        # Collect the player's initial balance and betting preferences.
+        balance = deposit()
+        lines = get_number_of_lines()
 
-    # Deduct the total bet before generating the slot machine result.
-    remaining_balance = balance - total_bet
+        # Get the bet amount and calculate the total amount being wagered.
+        bet = get_bet(lines)
+        total_bet = bet * lines
 
-    # Generate and display the random slot machine combination.
-    columns = get_slot_machine_spin()
-    print_slot_machine(columns)
+        # Prevent the player from betting more than their available balance.
+        if total_bet > balance:
+            print(
+                f"Error: Your current balance ${balance} is insufficient "
+                f"to place that bet on {lines} "
+                f"{'line' if lines == 1 else 'lines'} at ${bet} per line."
+            )
+            print("Please decrease your bet or increase your deposit.")
+            return
 
-    # Identify winning rows and calculate the corresponding payout.
-    winning_lines = check_winnings(columns, lines)
-    winnings = get_winnings(winning_lines, bet)
+        # Deduct the total bet before generating the slot machine result.
+        remaining_balance = balance - total_bet
 
-    # Add the winnings to the balance remaining after the bet.
-    remaining_balance += winnings
+        # Generate and display the random slot machine combination.
+        columns = get_slot_machine_spin()
+        print_slot_machine(columns)
 
-    # Display the final game results.
-    print("=" * 35)
-    print("          GAME RESULTS")
-    print("=" * 35)
+        # Identify winning rows and calculate the corresponding payout.
+        winning_lines = check_winnings(columns, lines)
+        winnings = get_winnings(winning_lines, bet)
 
-    print(f"Bet per line: ${bet}")
-    print(f"Lines selected: {lines}")
-    print(f"Total bet: ${total_bet}")
+        # Add the winnings to the balance remaining after the bet.
+        remaining_balance += winnings
 
-    # Display a different message depending on whether the player won.
-    if winning_lines:
-        print(f"Congratulations! You won on line(s): {winning_lines}")
-    else:
-        print("Sorry! No winning lines this time.")
+        # Display the final game results.
+        print("=" * 35)
+        print("          GAME RESULTS")
+        print("=" * 35)
 
-    print(f"Total winnings: ${winnings}")
-    print(f"Final balance: ${remaining_balance}")
+        print(f"Bet per line: ${bet}")
+        print(f"Lines selected: {lines}")
+        print(f"Total bet: ${total_bet}")
 
-    print("=" * 35)
+        # Display a different message depending on whether the player won.
+        if winning_lines:
+            print(f"Congratulations! You won on line(s): {winning_lines}")
+        else:
+            print("Sorry! No winning lines this time.")
 
+        print(f"Total winnings: ${winnings}")
+        print(f"Final balance: ${remaining_balance}")
 
+        print("=" * 35)
+        # Asks the user if they want to play again or end the game.
+        if input("Do you want to play again? (y/n): ").lower() != "y":
+            print("Thank you for playing! Goodbye!")
+            break
+
+            
 # Start the game.
 main()
