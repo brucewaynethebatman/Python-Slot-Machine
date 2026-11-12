@@ -1,67 +1,56 @@
-# 🎰 Python Slot Machine
+# 🎰 Python Slot Machine Game
 
-A command-line slot machine game developed using **Python**. The application simulates a 3×3 slot machine where players can deposit funds, select betting lines, place bets, and earn payouts by matching symbols across horizontal rows.
+A command-line Slot Machine game built using Python. The game allows players to deposit money, select betting lines, place bets, and try their luck with randomly generated slot combinations.
 
-Built to apply core Python programming concepts through a practical project.
+The game continues running until the player decides to exit, allowing multiple rounds without restarting the program.
 
-## Overview
+## 🚀 Features
 
-The game generates a grid of randomly selected symbols and evaluates the selected horizontal betting lines to determine winning combinations. It calculates payouts based on the number of winning lines and updates the player's remaining balance accordingly.
+- **Random Slot Generation:** Uses Python's `random` module to generate a 3×3 slot machine grid.
+- **Deposit System:** Players can deposit an initial balance.
+- **Flexible Betting:** Choose between 1 and 3 betting lines.
+- **Bet Validation:** Enforces minimum and maximum betting limits.
+- **Winning Detection:** Checks whether all three symbols match across a selected row.
+- **Payout System:** Calculates winnings using a predefined payout multiplier.
+- **Balance Management:** Deducts bets and adds winnings to the remaining balance.
+- **Continuous Gameplay:** Uses `while True` to keep the game running until the player chooses to exit.
+- **Replay Option:** Players can start another round without restarting the program.
+- **Input Validation:** Handles invalid inputs and prevents incorrect betting values.
 
-## Features
+## 🛠️ Technologies Used
 
-- **Balance Management** — Deposit an initial amount and track the remaining balance.
-- **Flexible Betting** — Select between 1 and 3 betting lines.
-- **Bet Validation** — Enforce minimum and maximum bet limits.
-- **Randomized Gameplay** — Generate slot machine combinations using Python's `random` module.
-- **Winning Detection** — Identify matching symbols across horizontal rows.
-- **Automated Payouts** — Calculate winnings based on winning lines and the payout multiplier.
-- **Input Validation** — Handle invalid entries and insufficient balances.
+- Python
+- Random Module
+- Loops (`for`, `while`)
+- Conditional Statements (`if`, `else`, `break`)
+- Functions
+- Lists and Nested Lists
+- User Input Handling
+- Basic Game Logic
 
-## Game Preview
+## 🎮 How to Play
 
-<!-- Add your terminal screenshot here -->
-<!-- Example: ![Slot Machine Preview](screenshots/game-preview.png) -->
+1. Run the Python program.
+2. Enter your initial deposit.
+3. Select the number of betting lines (1–3).
+4. Enter your bet amount per line.
+5. The slot machine generates a random 3×3 combination.
+6. If all three symbols match on a selected row, you win.
+7. Your winnings are calculated and added to your remaining balance.
+8. Choose whether to play another round or exit.
 
-## Game Rules
+## 📋 Game Configuration
 
-1. Make an initial deposit to start the game.
-2. Select the number of betting lines (1–3).
-3. Enter the amount to bet on each line.
-4. The slot machine generates a 3×3 grid of random symbols.
-5. A line wins when all three symbols in its horizontal row match.
-6. Each winning line returns twice the amount bet on that line.
-
-### Payout Calculation
-
-**Total Bet**
-
-`Bet Per Line × Number of Selected Lines`
-
-**Total Winnings**
-
-`Number of Winning Lines × Bet Per Line × Payout Multiplier`
-
-**Final Balance**
-
-`Initial Balance − Total Bet + Total Winnings`
-
-## Technology Stack
-
-| Technology | Purpose |
+| Setting | Value |
 |---|---|
-| Python 3 | Core programming language |
-| Random Module | Random symbol generation |
-| VS Code | Development environment |
+| Grid Size | 3 × 3 |
+| Available Symbols | 🍒 🍋 🍇 🍊 |
+| Minimum Bet | $1 |
+| Maximum Bet | $100 |
+| Maximum Betting Lines | 3 |
+| Payout Multiplier | 2x |
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8 or later
-- Git (optional, for cloning the repository)
-
-### Installation
+## 💻 Installation & Execution
 
 **1. Clone the repository**
 
@@ -72,64 +61,40 @@ git clone YOUR_REPOSITORY_URL
 **2. Navigate to the project directory**
 
 ```bash
-cd YOUR_PROJECT_FOLDER
+cd slot-machine
 ```
 
-**3. Run the application**
+**3. Run the game**
 
 ```bash
 python main.py
 ```
 
-No third-party dependencies are required.
+No external packages are required. The game uses Python's built-in `random` module.
 
-## Configuration
+## 📚 What I Learned
 
-Game settings are managed through constants in the Python source code.
+Through this project, I practiced:
 
-| Constant | Default Value | Description |
-|---|---:|---|
-| `ROWS` | 3 | Number of rows |
-| `COLS` | 3 | Number of columns |
-| `MAX_LINES` | 3 | Maximum betting lines |
-| `MIN_BET` | 1 | Minimum bet per line |
-| `MAX_BET` | 100 | Maximum bet per line |
-| `PAYOUT_MULTIPLIER` | 2 | Winning payout multiplier |
+- Implementing infinite loops using `while True`.
+- Using `break` to control loop termination.
+- Validating user input before processing it.
+- Working with nested lists and loops.
+- Breaking a larger program into reusable functions.
+- Implementing randomization and conditional game logic.
+- Managing balances and calculating payouts.
+- Building a continuous command-line application.
 
-## Python Concepts Demonstrated
+## 🔮 Future Improvements
 
-This project applies the following programming concepts:
+- Add a persistent balance system across multiple rounds.
+- Introduce multiple winning patterns.
+- Add different symbols with different payout values.
+- Improve the game interface with a more interactive design.
+- Add automated tests for game logic and payout calculations.
 
-- Functions and modular programming
-- Parameters, arguments, and return values
-- Local and global scope
-- Lists and nested lists
-- Nested loops and iteration
-- Conditional logic
-- `break`, `continue`, and `for...else`
-- Input validation and type conversion
-- Random number generation
-- Arithmetic operations and balance management
+---
 
-## Project Structure
+**Author:** Lokesh Kumawat
 
-```text
-python-slot-machine/
-│
-├── main.py
-└── README.md
-```
-
-## Future Improvements
-
-Potential enhancements include:
-
-- Multiple rounds of gameplay
-- Customizable payout multipliers for different symbols
-- Graphical user interface
-- Game statistics and session history
-
-## Author
-
-**Lokesh Kumawat**
-*Developed as a hands-on Python project to strengthen programming fundamentals and problem-solving skills.*
+*Built as a Python practice project to strengthen programming fundamentals and problem-solving skills.*
