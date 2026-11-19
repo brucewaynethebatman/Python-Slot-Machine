@@ -1,4 +1,4 @@
-# 🎰 The Python Slot Machine Game
+# 🎰 Python Slot Machine Game
 
 A command-line Slot Machine game built using Python. The game allows players to deposit money, select betting lines, place bets, and try their luck with randomly generated slot combinations.
 
